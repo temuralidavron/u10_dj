@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+  <h3 class="fw-bold mb-4 text-center">📱 Telefonlar</h3>
+
+  <div class="row g-4">
+    {% for phone in phones %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          {% if phone.image %}
+           <img src="{{ phone.image.url }}"
+               class="card-img-top p-4" alt="phone" style="height: 180px; object-fit: contain;">
+          {% else %}
+          <img src="https://cdn-icons-png.flaticon.com/512/594/594846.png"
+               class="card-img-top p-4" alt="phone" style="height: 180px; object-fit: contain;">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title text-dark fw-semibold">{{ phone.brand }} {{ phone.model }}</h5>
+            <p class="card-text text-muted mb-1">Narxi: <span class="fw-bold text-success">{{ phone.price }} so'm</span></p>
+            <p class="card-text text-muted mb-1">Miqdori: {{ phone.quantity }}</p>
+            <p class="small text-secondary mb-2">{{ phone.created_at|date:"d.m.Y H:i" }}</p>
+            <button class="btn btn-outline-primary w-100 rounded-pill">Sotib olish</button>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col-12 text-center text-muted">
+        <p>📭 Hozircha telefonlar yo‘q</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

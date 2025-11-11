@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Tel yaratish </h3>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand</label>
+      <input type="text" name="brand" id="brand" class="form-control" value="{{ phone.brand }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="model" class="form-label">Model</label>
+      <input type="text" name="model" id="model" class="form-control" value="{{ phone.model }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="text" name="price" id="price" class="form-control" value="{{ phone.price }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="text" name="quantity" id="quantity" class="form-control" value="{{ phone.quantity }}">
+    </div>
+  <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="file" name="image" id="image" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</div>
+{% endblock %}
