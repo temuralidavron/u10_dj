@@ -6,7 +6,8 @@ from django.db import models
 class Phone(models.Model):
     brand=models.CharField(max_length=200)
     model=models.CharField(max_length=200)
-    image=models.ImageField(upload_to="olx",blank=True,null=True)
+    description=models.TextField(blank=True,null=True)
+    image=models.ImageField(upload_to="boshqa",blank=True,null=True)
     price=models.PositiveIntegerField()
     quantity=models.PositiveIntegerField()
     created_at=models.DateTimeField(auto_now=True)

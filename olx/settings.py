@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'page',
+    'about'
 ]
 
 MIDDLEWARE = [
@@ -72,22 +73,22 @@ WSGI_APPLICATION = 'olx.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "olx_u10_dj",
-#         "USER": "postgres",
-#         "PASSWORD": "1995",
-#         "HOST": "127.0.0.1",
-#         "PORT": "5432",
-#     }
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "olx_u10_dj",
+        "USER": "postgres",
+        "PASSWORD": "1995",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

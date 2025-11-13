@@ -4,7 +4,6 @@
   <h3 class="fw-bold mb-4 text-center">📱 Telefonlar</h3>
 
   <div class="row g-4">
-    {% for phone in phones %}
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100 shadow-sm border-0 rounded-4">
           {% if phone.image %}
@@ -20,17 +19,12 @@
             <p class="card-text text-muted mb-1">Narxi: <span class="fw-bold text-success">{{ phone.price }} so'm</span></p>
             <p class="card-text text-muted mb-1">Miqdori: {{ phone.quantity }}</p>
             <p class="small text-secondary mb-2">{{ phone.created_at|date:"d.m.Y H:i" }}</p>
-            <pr>{{ phone.pk }}</pr>
+            <pr>{{ phone.description }}</pr>
             <button class="btn btn-outline-primary w-100 rounded-pill">Sotib olish</button>
-           <a href="{% url 'update' phone.pk %}"> <button class="btn btn-outline-primary w-100 rounded-pill">Edit</button></a>
           </div>
         </div>
       </div>
-    {% empty %}
-      <div class="col-12 text-center text-muted">
-        <p>📭 Hozircha telefonlar yo‘q</p>
-      </div>
-    {% endfor %}
+
   </div>
 </div>
 {% endblock %}
